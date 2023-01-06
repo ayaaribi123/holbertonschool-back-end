@@ -6,7 +6,9 @@ if __name__ == '__main__':
     user = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])).json()
     todos = requests.get(
-        "https://jsonplaceholder.typicode.com/todos", params={"userId": sys.argv[1]}).json()
+        "https://jsonplaceholder.typicode.com/todos",
+        params={
+            "userId": sys.argv[1]}).json()
 
 completed = []
 for task in todos:
